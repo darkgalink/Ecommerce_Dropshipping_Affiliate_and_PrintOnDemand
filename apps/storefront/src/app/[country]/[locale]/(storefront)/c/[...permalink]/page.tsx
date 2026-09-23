@@ -11,6 +11,10 @@ import { getStoreUrl } from "@/lib/store";
 import { parseListingSearchParams } from "@/lib/utils/listing-search-params";
 import { CategoryBanner } from "./CategoryBanner";
 
+// Deliberately blocking: every request reads per-route params/searchParams
+// and there is no static shell to stream first.
+export const instant = false;
+
 interface CategoryPageProps {
   params: Promise<{
     country: string;

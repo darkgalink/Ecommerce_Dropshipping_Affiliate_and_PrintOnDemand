@@ -5,6 +5,10 @@ import { WholesaleSection } from "@/components/home/WholesaleSection";
 import { resolveCurrency } from "@/lib/data/markets";
 import { generateHomeMetadata } from "@/lib/metadata/home";
 
+// Deliberately blocking: every request reads per-route params
+// and there is no static shell to stream first.
+export const instant = false;
+
 interface HomePageProps {
   params: Promise<{
     country: string;

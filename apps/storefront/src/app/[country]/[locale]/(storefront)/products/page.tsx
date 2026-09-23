@@ -6,6 +6,10 @@ import { getProductFilters, getProducts } from "@/lib/data/products";
 import { generateProductsMetadata } from "@/lib/metadata/products";
 import { parseListingSearchParams } from "@/lib/utils/listing-search-params";
 
+// Deliberately blocking: every request reads per-route params/searchParams
+// and there is no static shell to stream first.
+export const instant = false;
+
 interface ProductsPageProps {
   params: Promise<{
     country: string;
