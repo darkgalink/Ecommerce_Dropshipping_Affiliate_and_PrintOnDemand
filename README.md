@@ -1,155 +1,94 @@
-# Ecommerce_Dropshipping
+# Welcome to [Astro Ecommerce](https://www.creative-tim.com/astro)
 
-A [Spree Commerce](https://spreecommerce.org) project.
+![version](https://img.shields.io/badge/version-1.1.0-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/astro-ecommerce.svg?maxAge=2592000)](https://github.com/creativetimofficial/astro-ecommerce/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/astro-ecommerce.svg?maxAge=2592000)](https://github.com/creativetimofficial/astro-ecommerce/issues?q=is%3Aissue+is%3Aclosed)
 
-## Getting Started
+![basics](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/astro-ecommerce/astro-ecommerce-1.jpg)
 
-### Prerequisites
+## Description
 
-- [Docker](https://docs.docker.com/get-docker/) installed and running
+Introducing **Astro Ecommerce**, the ultimate starter template for your e-commerce web project. Built on Astro's next-gen island architecture, Astro Ecommerce offers a sleek and modern design with a wide range of components and features to help you create a stunning online store.
 
-### Start the Spree API
+**Main Features**
+Build your e-commerce website quickly and efficiently with:
+- 70+ fully coded elements
+- 3 fully coded example pages
+- 30+ blocks
+- Responsive design
 
-```bash
-cd Ecommerce_Dropshipping
-npx spree dev
+**Example Pages**
+We created a set of pre-built pages to help you get inspired or show something to your clients. See them below:
+- [Landing Page](https://demos.creative-tim.com/astro-ecommerce/landing/): Designed to introduce the website's purpose and encourage the user to take an action.
+- [Product Page](https://demos.creative-tim.com/astro-ecommerce/product/): It's designed to give the user all the information they need to make a purchase decision
+- [Shopping Page](https://demos.creative-tim.com/astro-ecommerce/shopping-cart/): Includes a summary of the items in the cart and a form for billing and shipping information.
+- more+
+
+Astro Ecommerce has everything you need to create the e-commerce website of your dreams.
+
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   ├── cart/
+│   │   ├── checkout/
+│   │   ├── incentives/
+│   │   ├── order/
+│   │   ├── products/
+│   │   ├── promo/
+│   │   ├── reviews/
+│   │   ├── store/
+│   │   ├── dashboardContext.tsx
+│   │   ├── footer.tsx
+│   │   └── navbar.tsx
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       ├── index.astro
+│       ├── landing.astro
+│       ├── product.astro
+│       └── shopping-cart.astro
+├── package.json
+├── README.md
+└── tsconfig.json
 ```
 
-The first run completes setup automatically — it pulls the latest Spree image,
-seeds the database, and configures API keys.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Wait for the services to be healthy, then open:
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-- **Admin Dashboard:** http://localhost:5173 — started automatically by `spree dev`
-  - The first run opens a setup link where you create the admin account
-- **Seller Panel (marketplace):** http://localhost:5174 — run it with `cd apps/seller-dashboard && pnpm dev`
-- **Store API:** http://localhost:3000/api/v3/store
+Any static assets, like images, can be placed in the `public/` directory.
 
-### Start the storefront
+## 🧞 Commands
 
-Dependencies are already installed during setup — just start it:
+All commands are run from the root of the project, from a terminal:
 
-```bash
-cd apps/storefront
-npm run dev
-```
+| Command                | Action                                             |
+| :--------------------- | :------------------------------------------------- |
+| `npm install`          | Installs dependencies                              |
+| `npm run dev`          | Starts local dev server at `localhost:3000`        |
+| `npm run build`        | Build your production site to `./dist/`            |
+| `npm run preview`      | Preview your build locally, before deploying       |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `npm run astro --help` | Get help using the Astro CLI                       |
 
-Open http://localhost:3001
+#### Social Media
 
-### The React Dashboard
+Twitter: <https://twitter.com/CreativeTim>
 
-`apps/dashboard/` is your admin — a customizable React SPA (plugins, your
-own pages, table tweaks) with live reload. `spree dev` starts it
-automatically alongside the API; to run it on its own:
+Facebook: <https://www.facebook.com/CreativeTim>
 
-```bash
-cd apps/dashboard
-npm run dev
-```
+Dribbble: <https://dribbble.com/creativetim>
 
-Open http://localhost:5173 and sign in with the admin email and
-password you chose during the first run. The classic admin remains at
-http://localhost:3000/admin.
+TikTok: <https://tiktok.com/@creative.tim>
 
-When you deploy, the production image builds your dashboard and serves it at
-`/dashboard` on the same origin as the API (`npx spree build --production`).
+Instagram: <https://instagram.com/creativetimofficial>
 
-To learn how to add pages, tweak tables, or build plugins, see the
-[React Dashboard docs](https://spreecommerce.org/docs/developer/dashboard/overview).
+## 👀 Want to learn more?
 
-## Customizing the Spree API
-
-The `server/` directory is the Spree API — a full Rails application serving the Store and Admin APIs (plus background jobs and transactional emails) that your storefront and dashboard talk to. By default, the project runs it from a prebuilt Docker image. To switch to building from your local copy:
-
-```bash
-npx spree eject
-```
-
-This rebuilds the Docker image from `server/` and restarts services. You can then:
-
-- **Customize the API** by editing the files in `server/`
-- **Add gems** to `server/Gemfile`
-- **Add new resources** with `spree generate model <name> <attributes>`
-
-## Spree CLI
-
-This project uses [`@spree/cli`](https://spreecommerce.org/docs/developer/cli/quickstart) to manage the Spree API.
-
-### Services
-
-| Command | Description |
-|---------|-------------|
-| `spree dev` | Run the app in the foreground — streams logs, Ctrl+C stops it. First run completes setup automatically |
-| `spree stop` | Stop the API services |
-| `spree update` | Pull latest Spree image and restart (runs migrations automatically) |
-| `spree eject` | Switch from prebuilt image to building from `server/` |
-| `spree build --production` | Build the production image — includes `apps/dashboard` when present |
-| `spree logs` | View web server logs |
-| `spree logs worker` | View background jobs logs |
-| `spree console` | Open Rails console |
-
-### Data
-
-| Command | Description |
-|---------|-------------|
-| `spree migrate` | Install pending Spree migrations from gems, then run them or just run your own migrations |
-| `spree seed` | Seed the database |
-| `spree sample-data` | Load sample products, categories, images |
-
-### Users & API Keys
-
-| Command | Description |
-|---------|-------------|
-| `spree user create` | Create an admin user |
-| `spree api-key create` | Create a publishable or secret API key |
-| `spree api-key list` | List all API keys |
-| `spree api-key revoke <id>` | Revoke an API key (ID from `api-key list`) |
-
-### Generators
-
-| Command | Description |
-|---------|-------------|
-| `spree generate model Brand name:string slug:string:uniq` | Generate a new database model |
-| `spree generate api_resource Brand name:string slug:string:uniq` | Generate a new Spree API resource |
-| `spree generate subscriber OmsOrderSync order.completed` | Generate a new event subscriber |
-| `spree generate migration AddPositionToSpreeBrands position:integer` | Generate a new database migration |
-
-### Admin API
-
-Project setup mints a read-only secret key into `.spree/credentials.json` (gitignored), so the Admin API client works out of the box. If you skipped the setup step, `spree api` mints the key on first use instead:
-
-```bash
-npx spree api get products
-npx spree api get "orders?q[status_eq]=complete"
-npx spree api endpoints          # list endpoints + required scopes
-npx spree api status             # show resolved credentials + server reachability
-```
-
-The pre-configured key is read-only. To write, create a scoped secret key and pass it via `SPREE_API_KEY`:
-
-```bash
-npx spree api-key create --scopes write_products
-SPREE_API_KEY=sk_... npx spree api post products --data '{"name":"New product","prices":[{"currency":"USD","amount":"29.99"}]}'
-```
-
-| Command | Description |
-|---------|-------------|
-| `spree api get/post/patch/delete <path>` | Call the Admin API directly |
-| `spree api endpoints` | List Admin API endpoints with required scopes |
-| `spree auth login --profile <name>` | Save named credentials for a remote store |
-
-> **Running `spree` directly.** The commands above use `npx` because `@spree/cli` is a local project dependency. You can also run any of the package scripts (e.g. `npm run api -- get products`), or install the CLI globally for a bare `spree` command:
->
-> ```bash
-> npm install -g @spree/cli
-> spree api get products
-> ```
-
-## Learn More
-
-- [Spree Documentation](https://spreecommerce.org/docs)
-- [Spree Discord](https://discord.spreecommerce.org)
-- [Store API Reference](https://spreecommerce.org/docs/api-reference/store-api/introduction)
-- [Admin API Reference](https://spreecommerce.org/docs/api-reference/admin-api/introduction)
-- [CLI Reference](https://spreecommerce.org/docs/developer/cli/quickstart)
-- [Spree GitHub](https://github.com/spree/spree)
+Feel free to check [our documentation](https://www.creative-tim.com/learning-lab/astro/overview/astro-ecommerce) or jump into our [Discord server](https://discord.com/invite/TGZqBvZB).

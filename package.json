@@ -1,23 +1,27 @@
 {
-  "name": "Ecommerce_Dropshipping",
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "spree dev",
-    "stop": "spree stop",
-    "down": "docker compose down",
-    "update": "spree update",
-    "eject": "spree eject",
-    "logs": "spree logs",
-    "logs:worker": "spree logs worker",
-    "seed": "spree seed",
-    "load-sample-data": "spree sample-data",
-    "console": "spree console",
-    "api": "spree api",
-    "auth": "spree auth",
-    "api-key": "spree api-key"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@spree/cli": "^3.0.0",
-    "@spree/docs": "latest"
+    "@astrojs/react": "^4.2.2",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^5.5.5",
+    "forward-ref": "^1.0.0",
+    "json-server": "^0.17.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.6.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.55.0"
   }
 }
